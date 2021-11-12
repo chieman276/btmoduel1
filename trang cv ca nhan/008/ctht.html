@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type ="text" id= "ban_kinh" placeholder="bán kính" onkeyup="tinh()" > 
+    <div id="dien_tich"></div>
+    <script>
+        function tinh() {
+            let r = document.getElementById("ban_kinh").value;
+            let dien_tich= 3.14 * r * r;
+            document.getElementById("dien_tich").innerHTML = dien_tich;
+        }
+        
+    
+
+    </script>
+</body>
+</html>
