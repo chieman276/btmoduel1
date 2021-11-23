@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var input = prompt("") ;
+        var number = input ;
+        var numberXD = 0 ;
+        while (number > 0) {
+            var sc = number % 10 ; 
+            numberXD = numberXD * 10 + sc; 
+            number = Math.floor (number / 10);
+
+        }
+        document.write("dau vao" + input)
+        document.write("so vao" + numberXD)
+        if (numberXD == input) document.write("la so doi xung")
+        else {
+            document.write("khong phai so doi xung")
+
+        }
+        
+
+    </script>
+</body>
+</html>
