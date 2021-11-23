@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+   <h1>Các hệ điều hành</h1>
+   <input type="text" id="brand" name="" value="">
+   <input onclick="brandPush()" type="button" value="Add" placeholder="New Product">
+   <h3>Display All Product</h3>
+   <table border="1">
+       <thead>
+           <tr>
+               <th consplan="3"> Product Name</th>
+           </tr>
+       </thead>
+       <tbody id="kq"></tbody>
+  
+   </table>
+   <script>
+       let myInput = [];
+       function brandPush() {
+           let brand = document.getElementById("brand").value;
+           myInput.push(brand);
+           showBrand(myInput);
+
+       }
+       function showBrand(data) {
+           let tableHtml = "";
+           for (let i = 0; i < data.length; i++) {
+               const element = data[i];
+               tableHtml += "<tr>";
+               tableHtml += "<td>" + element + "</td>";
+               tableHtml += "<td>";
+               tableHtml += '<input onclick="editValue(' + i +')" type="button" value="Edit">';
+               tableHtml += "</td>";
+               tableHtml += "<td>";
+               tableHtml += '<input onclick="del(' + i +')"type = "button" value="Delete">';
+               tableHtml += "</td>";
+               tableHtml +="</tr>";
+               
+           }
+           console.log(tableHtml);
+           document.getElementById("kq").innerHTML = tableHtml;
+       }function del(index) {
+           myInput.splice(index, 1);
+           showBrand(myInput);
+       }
+       function editValue(index) {
+           myInput[index] = prompt ('Nhập giá trị vào đây:');
+           showBrand(myInput);
+       }
+
+   </script>
+</body>
+
+</html>
