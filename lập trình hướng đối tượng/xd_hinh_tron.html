@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // khai báo lớp
+        let Circle = function (radius) 
+        {
+            //khai bao thuoc tinh
+            this.radius = radius;
+
+
+            //khai bao phuong thuc lay ban kinh
+            this.getRadius = function () 
+            {
+                return this.radius;
+            }
+
+            //khai bao phuong thuc tra ve dien tich
+            this.getArea = function () 
+            {
+                return Math.PI * radius * radius;
+            }
+
+        }
+        // khởi tạo phương thức 
+        let objcircle = new Circle(2);
+        //
+        let radius = objcircle.getRadius();
+        // 
+        let area = objcircle.getArea();
+        // xuất
+        console.log("radius: " + radius + "; area: " + area);
+
+
+    </script>
+</body>
+
+</html>
