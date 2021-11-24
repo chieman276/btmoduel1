@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="1200" height="600" style="border: 1px solid;"></canvas>
+
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+        var imageObj = new Image();
+        window.onload = function () {
+            ctx.drawImage(imageObj, 250, 250);
+            ctx.fillRect(1, 1, 100, 100);
+        };
+        imageObj.src = 'http://pngimg.com/uploads/crab/crab_PNG41.png';
+
+        let x = 250;
+        let y = 250;
+        let speed = 50;
+
+       // ctx.drawImage(imageObj, x, y);
+        document.addEventListener('keydown', function (e) {
+            // nghe hành động ấn phím
+            let keycode = e.keyCode;
+            //console.log(keycode);
+            switch (keycode) {
+                //up arrow
+                case 38:
+                    //xóa các hình trong canvas
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    y = y - speed;
+                    // - y
+                    ctx.drawImage(imageObj, x, y);
+                    //vẽ lại hình con cua ở vị trí mới
+                    if ((y <100) && (x < 100)) {
+                        alert('Loser :)');
+                    }
+                    ctx.fillRect(1, 1, 100, 100);
+                    // vẽ lại hình vật cản
+                    break;
+
+                case 40:
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    y = y + speed;
+                    ctx.drawImage(imageObj, x, y);
+                    if ((y <100) && (x < 100)) {
+                        alert('Loser :)');
+                    }
+                    ctx.fillRect(1, 1, 100, 100);
+                    break;
+                case 37:
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    x = x - speed;
+                    ctx.drawImage(imageObj, x, y);
+                    if ((y <100) && (x < 100)) {
+                        alert('Loser :)');
+                    }
+                    ctx.fillRect(1, 1, 100, 100);
+                    break;
+                case 39:
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    x = x + speed;
+                    ctx.drawImage(imageObj, x, y);
+                    if ((y <100) && (x < 100)) {
+                        alert('Loser :)');
+                    }
+                    ctx.fillRect(1, 1, 100, 100);
+                    break;
+            }
+        });
+    </script>
+</body>
+
+</html>
