@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="1000" height="400" style="border: 1px solid;"></canvas>
+    <script>
+        //khởi tạo lớp
+        let hcnn = function () {
+
+            //khai bao thuoc tinh
+            this.long = 0;
+            this.width = 0;
+
+            //khai bao phuong thuc tinh dien tich
+            this.tinh_dien_tich = function () 
+            {
+                let dt = this.long * this.width;
+                return dt;
+            }
+
+            //khai bao puong thuc tinh chu vi
+            this.tinh_chu_vi = function () 
+            {
+                let cv = (this.long + this.width) * 2;
+                return cv;
+            }
+
+            //khai bao phuong thuc ve canvas
+            this.ve_canvas = function () 
+            {
+                // (x,y,this.long,this.width)
+                let myCanvas = document.getElementById('myCanvas');
+                let ctx = myCanvas.getContext('2d');
+                ctx.fillRect(100, 100, this.long, this.width);
+
+            }
+        }
+        //khoi tao doi tuong
+        let hcn = new hcnn()
+        hcn.long = 200;
+        hcn.width = 100;
+        //truy cap phuon thuc tinh dien tich
+       alert( hcn.tinh_dien_tich());
+        //truy cap phuong thuc tinh chu vi
+       alert(hcn.tinh_chu_vi());
+        //truy cap phuong thuc ve canvas
+        hcn.ve_canvas();
+    </script>
+</body>
+
+</html>
