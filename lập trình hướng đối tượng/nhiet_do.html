@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //khai bao lop
+        let Temperature = function () {
+            //khai bao thuoc tinh c
+            this.do_c = 0;
+            //khai bao phuong thuc c sang f
+            this.c_to_f = function () {
+
+                let doo = 1.8 * this.do_c + 32;
+                alert(doo);
+
+            }
+            // khai bao phuong thuc c sang k
+            this.c_to_k = function () {
+                let doo = this.do_c + 273;
+              alert(doo);
+            }
+        }
+        //khởi tạo đối tượng
+        let objTemperature = new Temperature()
+        //thiết lập giá trị thuộc tính c
+        objTemperature.do_c = 25;
+        //truy cập phương thức C sang F
+        objTemperature.c_to_f();
+        //truy cap phuong thuc c sang k
+        objTemperature.c_to_k();        
+    </script>
+
+</body>
+
+</html>
