@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>squiz game</title>
+</head>
+<body>
+    <h1>squiz game</h1>
+    <form name="f">
+        <textarea name="txt" cols="40" rows="10" onkeydown="typeTextarea();"></textarea>
+    </form>    
+    
+
+    
+    <script>
+         var a=new Array(),n="";
+            a[1]='T'; a[2]='Ô';a[3]='I';a[4]=' ';a[5]='L';a[6]='À';a[7]=' ';a[8]='A';a[9]='N';a[10]='1';a[11]='8';a[12]=' ';a[13]='V';a[14]='À';a[15]=' ';a[16]='N';a[17]='G';a[18]='Ư';a[19]='Ờ';a[20]='I';a[21]=' ';a[22]='K';a[23]='H';a[24]='Ô';a[25]='N';a[26]='G';a[27]=' ';a[28]='C';a[29]='Ó';a[30]=' ';a[31]='S';a[32]='Ự';a[33]=' ';a[34]='B';a[35]='I';a[36]='N';a[37]='H';a[38]=' ';a[39]='Y';a[40]='Ê';a[41]='N';a[42]='?';a[43]='!';a[44]='!';
+            
+            function typeTextarea(){
+                t = document.f.txt.value;
+                j = t.length;
+                if(j > 0)
+                {
+                    for(var i=1; i<=j; i++)
+                {
+                    n = n + a[i];
+                    if(i == 44)
+                {
+                    document.f.txt.value = "";
+                    n = "";
+                    }
+                }
+            }
+                    document.f.txt.value = n;  n="";
+                    setTimeout("typeTextarea()", 1);
+                    
+                }
+    </script>
+</body>
+</html>
