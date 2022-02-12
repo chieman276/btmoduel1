@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let mobile = function () {
+            this.battery = 0;
+            this.soan_tin_nhan = "";
+            this.luu_tin_nhan = hop_thu_den;
+            this.luu_tin_nhann = tin_da_gui;
+            this.tat_dien_thoai = false;
+            this.sac_dien_thoai = 32;
+            
+        }
+        this.checkkiemtradienthoai = function () {
+
+
+            this.tunr_on_the_phone = function () {
+                alert("bật điện thoại");
+
+            };
+            this.texting_messenger = function () {
+                prompt("soạn tin nhắn");
+            };
+            this.inbox_messenger = function () {
+                console.log("lưu tin nhắn gưi ")
+            };
+            this.charge = function () {
+                alert("sạc pin" + this.battery++)
+            };
+            this.turn_off_the_phone = function () {
+                alert("tắt điện thoại")
+                location.reload()
+            };
+            this.use_function = function () {
+                alert("sử dụng một chức năng" + this.battery--)
+            }
+        };
+        var mobile = new Mobile(10, 100, 100, 100);
+
+        function tunr_on_the_phone1() {
+            mobile.tunr_on_the_phone()
+        };
+        function texting_messenger2() {
+            mobile.texting_messenger()
+        };
+
+        function inbox_messenger3() {
+            mobile.inbox_messenger()
+        };
+        function charge4() {
+            mobile.charge()
+        };
+        function turn_off_the_phone5() {
+            mobile.turn_off_the_phone()
+        };
+        function use_function6() {
+            mobile.use_function()
+        };
+    </script>
+    <h1>Điện thoại</h1>
+    <table border="1px">
+        <th><button type="number" onclick="tunr_on_the_phone1()" ;>Bật điện thoại</button></th>
+        <th><button type="number" onclick="texting_messenger2()" ;>Soạn tin nhắn</button></th>
+        <th><button type="number" onclick="inbox_messenger3()" ;>lưu tin nhắn</button> </th>
+        <th><button type="number" onclick=" charge4()" ;>sạc pin</button> </th>
+        <th><button type="number" onclick="turn_off_the_phone5()" ;>tắt điện thoại</button> </th>
+        <th><button type="number" onclick=" use_function6()" ;>sử dụng</button> </th>
+    </table>
+
+</body>
+
+</html>
